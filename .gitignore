@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 server/node_modules/
 node_modules/
 client/node_modules/
-=======
+
 # Logs
 logs
 *.log
@@ -40,4 +39,3 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
->>>>>>> 684bacb1e2f9e7d97740dbe5fcc37f7dfa5aa444
