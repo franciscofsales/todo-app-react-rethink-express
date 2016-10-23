@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Image, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, StatusBar, TouchableOpacity, Platform } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import TodoList from './components/TodoList';
 import Icon from 'react-native-vector-icons/EvilIcons';
@@ -24,7 +24,7 @@ export default class RouterComponent extends Component {
       };
 
       const tabIcon = (
-          <TouchableOpacity onPress={() => {alert('yeah')}}>
+          <TouchableOpacity onPress={() => {alert('yeah')}} style={{flex:1, alignItems:'center', justifyContent: 'center'}}>
             <Icon name="plus" size={30} color='white'/>
           </TouchableOpacity>
       );
@@ -32,10 +32,13 @@ export default class RouterComponent extends Component {
     return (
       <Image source={require('./images/background.jpg')} style={styles.container}>
         <StatusBar
-           backgroundColor="blue"
+           backgroundColor="rgba(0,0,0,0.3)"
+           translucent
            barStyle="light-content"
          />
-        <Router sceneStyle={{paddingTop:65}}  navigationBarStyle={styles.navbarStyle} titleStyle={styles.titleStyle}>
+        <Router sceneStyle={{
+          paddingTop: 65,
+        }}  navigationBarStyle={styles.navbarStyle} titleStyle={styles.titleStyle}>
           <Scene key="main">
             <Scene
               key='todoList'
@@ -59,7 +62,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
-    elevation: 4,
+    elevation: 2,
+    paddingTop: (Platform.OS === 'ios') ? 5 : 20,
+    height: 70
   },
   titleStyle: {
     color: 'white',
