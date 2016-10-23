@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
+import TodoFormReducer from './TodoFormReducer';
+import TodosReducer from './TodosReducer';
+import AuthReducer from './Auth';
 
 export default combineReducers({
-  todos: () => [{text:'testing the hell out of this stuff wokfasodfksaodfsa', title:"my note"}]
+  todos: TodosReducer,
+  todoForm: TodoFormReducer,
+  auth: AuthReducer
 });

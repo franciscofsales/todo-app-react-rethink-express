@@ -7,12 +7,15 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/EvilIcons';
 
-export default class Todo extends Component {
+class Todo extends Component {
+
   render() {
     return (
-      <View style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => Actions.todoItem({todo: this.props.todo})}>
         <View style={styles.rowContainer}>
           <Text style={styles.textStyle}>
             {this.props.todo.title}:
@@ -21,10 +24,10 @@ export default class Todo extends Component {
             { this.props.todo.text}
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.onRemove(this.props.todo)}>
           <Icon name="close" size={30} color="black" />
         </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -63,3 +66,5 @@ const styles = StyleSheet.create({
     flex: 1
   }
 });
+
+export default connect(null, null)(Todo);

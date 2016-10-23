@@ -18,6 +18,7 @@ class todos {
         function(connection,callback) {
           rethinkdb.table('todos').insert({
             text: todoData.text,
+            title: todoData.title,
             created_at: rethinkdb.now()
           }).run(connection,function(err,result) {
             connection.close();

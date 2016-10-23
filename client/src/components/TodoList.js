@@ -9,13 +9,15 @@ import {
   StyleSheet,
   ListView
 } from 'react-native';
+import DynamicListView from './common/DynamicListView';
 import Todo from './Todo';
+import {removeTodo, fetchTodos} from '../actions';
+
 
 class TodoList extends Component {
-  componentWillMount() {
-    // this.props.();
+  componentDidMount() {
+    this.props.fetchTodos();
     this.createDataSource(this.props);
-
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,10 +39,11 @@ class TodoList extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ListView
-          enableEmptySection
-          dataSource={this.dataSource}
-          renderRow={this.renderRow}/>
+        <DynamicListView
+          items={this.props.todos}
+          renderRow={this.renderRow}
+          onRemove={(item) => this.props.removeTodo(item)}
+        />
       </View>
     );
   }
@@ -64,5 +67,5 @@ function mapStateToProps (state, props) {
 
 export default connect(
   mapStateToProps,
-  null
+  {removeTodo, fetchTodos}
 )(TodoList);
