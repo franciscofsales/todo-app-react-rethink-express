@@ -1,2 +1,5 @@
 # todo-app-react-rethink-express
-ToDo App with React (Native), Express+Rethinkdb
+
+- ToDo App written in React Native (Redux, Sagas, Router Flux, Firebase)
+
+- Development server Express + Rethinkdb
