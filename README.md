@@ -2,6 +2,6 @@
 
 - ToDo App written in React Native (Redux, Sagas, Router Flux, Firebase)
 
-[Alt text](![Alt text](http://full/path/to/img.jpg "demo")
+[Demo](![Alt text](https://github.com/franciscofsales/todo-app-react-rethink-express/raw/master/client/demo.gif)
 
 - Development server Express + Rethinkdb
