@@ -97,6 +97,7 @@ class LoginView extends Component {
                 autoCorrect={false}
                 onChangeText={(email) => this.setState({email: email})}
                 style = {styles.textInput}
+                underlineColorAndroid="rgba(0,0,0,0)"
                 autoCapitalize='none'/>
             </View>
             <View style={{flex:1, borderColor:'#d3d3d3'}}>
@@ -108,6 +109,7 @@ class LoginView extends Component {
                 placeholderTextColor = "#fff"
                 style = {styles.textInput}
                 secureTextEntry
+                underlineColorAndroid="rgba(0,0,0,0)"
                 autoCapitalize='none'/>
             </View>
             <ButtonComponent

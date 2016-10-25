@@ -50,7 +50,7 @@ class Signup extends Component {
         Actions.main({type: 'reset'});
       }
       if (props.auth.error) {
-        this.setState({buttonState: 'register', error: props.auth.error});
+        this.setState({buttonState: 'register', error: 'Registration failed. Please try again.'});
       }
     }
   }
@@ -94,6 +94,7 @@ class Signup extends Component {
                 autoCorrect={false}
                 onChangeText={(email) => this.setState({email: email})}
                 style = {styles.textInput}
+                underlineColorAndroid="rgba(0,0,0,0)"
                 autoCapitalize='none'/>
             </View>
             <View style={{flex:1, borderColor:'#d3d3d3'}}>
@@ -104,6 +105,7 @@ class Signup extends Component {
                 autoCorrect={false}
                 placeholderTextColor = "#fff"
                 style = {styles.textInput}
+                underlineColorAndroid="rgba(0,0,0,0)"
                 secureTextEntry
                 autoCapitalize='none'/>
             </View>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/franciscosales/Development/Work/open-source/ToDoApp/client/node_modules/react-native-spinkit/android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">RNSpinkit</string>
+</resources>
