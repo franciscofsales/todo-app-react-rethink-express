@@ -89,6 +89,7 @@ class RouterComponent extends Component {
                 }}
                 getSceneStyle={getSceneStyle}
                 renderRightButton={ () => tabIcon}
+                backAndroidHandler={() => false}
               />
               <Scene
                 key='todoItem'
